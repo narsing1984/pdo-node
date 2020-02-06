@@ -1,0 +1,10 @@
+{
+  "background_image": "http://localhost:3000/images/bg-1.jpg",
+  "company_name": "General Pharma Co.",
+  "welcome_message": "Welcome to the <strong>General Pharma</strong> Pull-Through Portal",
+  "logo": "http://localhost:3000/images/PX_KO.png",
+  "contactus": "Contact US",
+  "copyright": "Version: 2.1.0 For Internal Use Only. Do Not Detail or Distribute to Any Third Parties.",
+  "release_date": "2018-10-09",
+  "formulary_date": "2018-08-01"
+}

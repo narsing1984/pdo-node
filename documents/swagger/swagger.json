@@ -1,0 +1,120 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "SCRM swagger documentation",
+    "description": "",
+    "termsOfService": "",
+    "contact": {
+      "name": "aditya.kuna@sagarsoft.in"
+    }
+  },
+  "host": "192.168.50.71:9000",
+  "basePath": "/",
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/auth/login": {
+      "post": {
+        "tags": [
+          "Login"
+        ],
+        "description": "Returns login details with access token",
+        "operationId": "Login",
+        "parameters": [
+          {
+            "name": "request",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/auth"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Login Response",
+            "schema": {
+              "$ref": "#/definitions/authTokenResponse"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "auth": {
+      "type": "object",
+      "required": [
+        "username",
+        "password"
+      ],
+      "properties": {
+        "username": {
+          "type": "string",
+          "maxLength": 100,
+          "description": "username"
+        },
+        "password": {
+          "type": "string",
+          "maxLength": 100,
+          "description": "Password matching the username."
+        }
+      }
+    },
+    "authTokenResponse": {
+      "type": "object",
+      "required": [
+        "id",
+        "username",
+        "firstName",
+        "lastName",
+        "role",
+        "token"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "maxLength": 360,
+          "description": "ID of the logged in user",
+          "example": "1"
+        },
+        "username": {
+          "type": "string",
+          "format": "int32",
+          "description": "username of the logged in user",
+          "example": "adityakuna"
+        },
+        "firstName": {
+          "type": "string",
+          "description": "First Name of the logged in user",
+          "example": "Aditya"
+        },
+        "lastName": {
+          "type": "string",
+          "format": "int32",
+          "description": "last Name of the logged in user",
+          "example": "Kuna"
+        },
+        "user_role_id": {
+          "type": "string",
+          "description": "Role of the User",
+          "example": "1"
+        },
+        "token": {
+          "type": "string",
+          "description": "Unique id of logged in user",
+          "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZGx5dHoiLCJpYXQiOjE1NzE3Mzk3OTUsImV4cCI6MTU3MTgyNjE5NX0.0VXExPiX6HAuEQOxDpMTPpvuKTZhPpyOLZxztQs63QU"
+        }
+      }
+    }
+  }
+}
